@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>home</title>
+    <title>{{title}}</title>
 </head>
 <body>
- <h1 style="background-color: red; color: white; padding: 10px;">This is the home page</h1>
+ <h1 style="">{{bodyData}}</h1>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Sl</th>
+        <th>Name</th>
+        <th>Roll</th>
+        <th>Phone</th>
+    </tr>
+   {% for n in student%}
+     <tr>
+         <td>{{forloop.counter}}</td>
+        <td>{{n.name}}</td>
+        <td>{{n.roll}}</td>
+        <td>{{n.phone}}</td>
+    </tr>
+ {% endfor %}
+</table>
+ {% for n in range %}
+     {% if n > 5 %}
+        <div style="color:green">{{ n }}</div>
+    {% else %}
+        <div style="color:red">{{ n }}</div>
+    {% endif %}
+{% endfor %}
 </body>
 </html>
